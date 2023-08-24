@@ -35,7 +35,7 @@ function Navbar({ onSearch ,cartItemount }) {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <form className="search ms-auto" style={{width:"500px"}}>
+        {/* <form className="search ms-auto" style={{width:"500px"}}>
             <div className="form-control">
               <input
                 type="text"
@@ -47,10 +47,10 @@ function Navbar({ onSearch ,cartItemount }) {
             <button type="button" className="search-btn" onClick={handleSubmit}>
               Search
             </button>
-          </form> 
-          <Link to="/" className="link">
-          <p className="mt-3 ms-4">{`Hello :   ${name}`}</p>
-        </Link>
+          </form>  */}
+          {/* <Link to="/" className="link">
+          <p className="mt-3 ms-4 mx-auto">{`Hello :   ${name}`}</p>
+        </Link> */}
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <Link class="nav-link active" to="/" aria-current="page" href="#">

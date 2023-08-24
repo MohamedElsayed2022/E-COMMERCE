@@ -4,14 +4,22 @@ import { useSearchParams } from "react-router-dom"
 import { Item } from "../../components/item"
 import { useCart } from "../../context/Cart"
 
-const Products = () => {
+const Products = ({onSearch}) => {
+    const [searchQuery, setSearchQuery] = useState('');
+
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [query] = useSearchParams();
     const { addToCart } = useCart()
     const name = localStorage.getItem("name")
+    const handleSubmit = ()=>{
+        if(searchQuery.trim().length){
+          onSearch(searchQuery.trim())
+        }
+        setSearchQuery('')
+      }
 
-    const searchQuery = query.get('q');
+    // const searchQuery = query.get('q');
 
     useEffect(() => {
         const fetchProducts = async () => {
@@ -41,6 +49,25 @@ const Products = () => {
     return (
         <>
         {}
+        <div className="row">
+                <div className="col">
+                    <form className="search" style={{ maxWidth: "900px", margin: "20px auto" }}>
+                        <div className="form-control">
+                            <input
+                                type="text"
+                                style={{ textAlign: "center", width: "100%" }} 
+                                placeholder="Search products..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                            />
+                        </div>
+                        <button type="button" className="search-btn" onClick={handleSubmit}>
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+    
             <div className="container">
 
                 <div className="products my-5">

@@ -5,10 +5,10 @@ const Item = ({ data, addToCart }) => {
     const { id, image, title, price } = data
 
     return (
-        <div className="card">
+        <div className="card" style={{width:"100%" , textAlign:"center"}}>
             <div className="grid">
                 <div className="image">
-                    <img src={image} alt="" />
+                    <img  src={image} alt="" />
                 </div>
                 <div className="title">
                     <Link to={`/product/${id}`} className="link titleLink">
