@@ -51,7 +51,7 @@ const Products = ({onSearch}) => {
         {}
         <div className="row">
                 <div className="col">
-                    <form className="search" style={{ maxWidth: "900px", margin: "20px auto" }}>
+                    <form className="search" style={{ maxWidth: "700px", margin: "20px auto" }}>
                         <div className="form-control">
                             <input
                                 type="text"
